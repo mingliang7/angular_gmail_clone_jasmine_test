@@ -28,4 +28,6 @@ describe 'module myApp', ->
 				expect(route.routes['/inbox/email/:id'].controller).toEqual 'EmailController'
 				# otherwise redirect to
 				expect(route.routes[null].redirectTo).toEqual '/inbox' 
-				     
+	 it 'should route to form.html', ->
+    expect(route.routes['/inbox/email/:id/new'].templateUrl).toEqual 'form.html'
+             		     

@@ -1,0 +1,22 @@
+<h1>Welcome {{name}}</h1>
+<form name= "myForm" ng-submit="submit()" novalidate >
+	<label for="name">Name:</label>
+	<span ng-class="{'label-success':focus}" class="label label-default">Focus</span>
+
+		<span ng-class="{'label-warning':!focus}" class="label label-default">Blur</span>
+
+	<input type="text" ng-model="name" name="Name" ng-focus="focus=true" ng-blur="focus=false" required >
+	<select name="age" ng-model="age" ng-options="age for age in generateAge()"></select>
+	<input type="submit" value="Submit">
+</form>
+<br>
+<hr>
+<div ng-switch="condition">
+	<p class="well" ng-switch-when="true">  
+		submitted
+		</p>
+		<p class="well" ng-switch-when="false">  
+		invalid
+		</p>
+</div>
+{{users}}

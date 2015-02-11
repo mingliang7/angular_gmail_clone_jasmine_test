@@ -1,2 +1,81 @@
 <h1>Welcome to angular version {{version}}</h1>
 <h2>{{description()}}</h2>
+<h1>ngif</h1>
+
+<div class="col-md-12">
+	<nav>
+		<button class= "btn btn-primary" type="button" ng-click="on=true">On=true</button>
+		<button class= "btn btn-primary" type="button" ng-click="on=false">On=false</button>
+	</nav>
+	<div ng-if="on" class="col-md-12">
+
+	<br>
+			<p class="well">I am visible when ng-if = true</p>
+	</div>
+	<hr>
+	<nav>
+		<button class= "btn btn-primary" type="button" ng-click="show=true">Show=true</button>
+		<button class= "btn btn-primary" type="button" ng-click="show=false">Show=false</button>
+	</nav>
+		<br>
+	<div class="col-md-12" ng-show="show">
+		<p class="well">I am visible when show is true</p>
+	</div>
+	<hr>
+	<nav>
+		<button class= "btn btn-primary" type="button" ng-click="setColors()">Colors</button>
+		<button class= "btn btn-primary" type="button" ng-click="setStates()">State</button>
+		<button class= "btn btn-primary" type="button" ng-click="values=null">[nothing]</button>
+	</nav>
+	<br>
+	<div ng-hide="getValues()">
+		<p class="well">There are no values</p>
+	</div>
+		<div ng-show="getValues()">
+		<ul class="nav well">
+			<li ng-repeat="value in getValues()">
+				{{$index + 1}} {{ value }}
+			</li>
+		</ul>
+	</div>
+	<hr>
+	<nav>
+		<button class= "btn btn-primary" type="button" ng-click="slide='1'">Slide 1</button>
+		<button class= "btn btn-primary" type="button" ng-click="slide='2'">Slide 2</button>
+		<button class= "btn btn-primary" type="button" ng-click="slide='3'l">Slide 3</button>
+			<button class= "btn btn-primary" type="button" ng-click="slide='other'">Other</button>
+	</nav>
+
+	<br>
+	<div class="col-md-12" ng-switch="slide">
+		<div ng-switch-when="1" class="well slide-1">
+				<p>This is slide 1</p>
+		</div>
+		<div ng-switch-when="2" class="well slide-2">
+				<p>This is slide 2</p>
+		</div>
+		<div ng-switch-when="3" class="well slide-3">
+				<p>This is slide 3</p>
+		</div>
+			<div ng-switch-default class="well other-slide">
+				<p>Other slide</p>
+		</div>
+	</div>
+</div>
+<div class="container">
+<section>Ng Include
+<hr>
+	<nav>
+		<button class= "btn btn-primary" type="button" ng-click="tpl='thkeam.html'">Load inbox</button>
+		<button class= "btn btn-primary" type="button" ng-click="tpl='email.html'">Load Email</button>
+			<button class= "btn btn-primary" type="button" ng-click="tpl=null">[load Null]</button>
+	</nav>
+
+	<br>
+	<div class="md-col-4 slide-animate-container" ng-include="tpl"></div>
+</section>
+</div>
+<hr>
+
+<li ng-repeat="user in users">{{user.first_name}}</li>
+<div class="from-top"></div>
